@@ -1,6 +1,7 @@
 class Solution {
 public:
     void setZeroes(vector<vector<int>>& matrix) {
+    // Method 1 TC O((n*m)(n+m)) SC o(1)
   // Method t.c. o((n*m)+(n+m)) s.c. o(n)
         int r=matrix.size(),c=matrix[0].size();
         vector<int>d1(r,-1);
@@ -20,6 +21,8 @@ public:
                 }
             }
         }
+        
+        
         //method 2 T.C. O(N*M+N*M) S.C. O(1)
   /*      int col0=1;
     int r=matrix.size(),c=matrix[0].size();
