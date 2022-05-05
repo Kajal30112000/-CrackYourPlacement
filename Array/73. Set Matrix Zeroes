@@ -1,0 +1,48 @@
+class Solution {
+public:
+    void setZeroes(vector<vector<int>>& matrix) {
+  // Method t.c. o((n*m)+(n+m)) s.c. o(n)
+        int r=matrix.size(),c=matrix[0].size();
+        vector<int>d1(r,-1);
+        vector<int>d2(c,-1);
+        for(int i=0;i<r;i++){
+            for(int j=0;j<c;j++){
+                if(matrix[i][j]==0){
+                    d1[i]=0;
+                    d2[j]=0;
+                }
+            }
+        }
+        for(int i=0;i<r;i++){
+            for(int j=0;j<c;j++){
+                if(d1[i]==0||d2[j]==0){
+                    matrix[i][j]=0;
+                }
+            }
+        }
+        //method 2 T.C. O(N*M+N*M) S.C. O(1)
+  /*      int col0=1;
+    int r=matrix.size(),c=matrix[0].size();
+    for(int i=0;i<r;i++){
+        if(matrix[i][0]==0)col0=0;
+       for(int j=0;j<c;j++){
+            if(matrix[i][j]==0){
+            matrix[i][0]=0;
+            matrix[0][j]=0;
+        }
+       }
+    }
+        for(int i=r-1;i>=0;i--){
+            for(int j=c-1;j>=0;j--){
+                 if(matrix[i][0]==0||matrix[0][j]==0){
+                     matrix[i][j]=0;
+                 }
+            }
+            if(col0==0){
+                matrix[i][0]=0;
+            }
+        }
+    */
+    }
+
+};
